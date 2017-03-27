@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+     
+    <!-- Path to Framework7 Library CSS, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="Semantic/semantic.min.css">
+    
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <title>gothere</title>
+</head>
+
+<body>
+    
+     <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+          <!-- Page, "data-page" contains page name -->
+            
+          <div  class="page " data-page="index">
+              
+            <!-- Top Navbar. In Material theme it should be inside of the page-->
+              
+             <div class="navbar theme-teal">
+              <div class="navbar-inner">
+                <div class="center"><i class="send icon" style="font-size:30px;margin-bottom:20px;"></i></div>
+                  <div class="right">
+                                  <!-- Right link contains only icon - additional "icon-only" class-->
+                                  <a href="#" class="link icon-only open-panel"> <i class="icon-bell"></i></a>
+                                  <a href="#" class="link icon-only open-panel"> <i class="icon-map-pin"></i></a>
+                                  <a href="#" class="link icon-only open-panel"> <i class="icon-globe"></i></a>
+                              </div>
+              </div>
+            </div>
+              
+              
+              <!-- Additional "tabbar-scrollable" class -->
+                      <div class="toolbar tabbar tabbar-scrollable theme-teal">
+                        <div class="toolbar-inner " >
+                             <a style="text-transform:none;" href="#tab-1" class="tabs tab-link active">In vogue</a>
+                             <a style="text-transform:none;" href="#tab-2" class="tabs tab-link">Music</a>
+                             <a style="text-transform:none;" href="#tab-3" class="tabs tab-link">Sports &amp recreation</a>
+                             <a style="text-transform:none;" href="#tab-4" class="tabs tab-link">Fundraisers</a>
+                             <a style="text-transform:none;" href="#tab-5" class="tabs tab-link">Movies &amp Theaters</a>
+                             <a style="text-transform:none;" href="#tab-6" class="tabs tab-link">Rallies &amp Protests</a>
+                             <a style="text-transform:none;" href="#tab-7" class="tabs tab-link">Fashion &amp Gallery</a>
+                             <a style="text-transform:none;" href="#tab-8" class="tabs tab-link">Parties &amp Clubs</a>
+                             <a style="text-transform:none;" href="#tab-9" class="tabs tab-link">Comedy</a>
+                             <a style="text-transform:none;" href="#tab-10" class="tabs tab-link">Conventions &amp Talks</a>
+                          </div>
+                      </div>
+        
+ 
+            <!-- Toolbar. In Material theme it should be inside of the page-->
+            <div class="toolbar toolbar-bottom theme-teal">
+              <div class="toolbar-inner">
+                <!-- Toolbar links -->
+                <a href="#" class="link"><i class="icon-eye-1"></i></a>
+                  <a href="pages/schedule.html" class="link"><i class="icon-calendar-plus-o"></i> </a>
+                <a href="pages/create.html" class="external link"><i class="icon-feather"></i></a>
+                <a href="pages/profile.html" class="external link"><i class="icon-child"></i></a>
+                <a href="pages/search.html" class="external link"><i class="search icon" style="margin-bottom:35px;"></i></a>
+              </div>
+            </div>
+ 
+            <!-- Scrollable page content -->
+            <div class="page-content" >
+             <!-- Link to another page -->
+              <div class="tab-links">
+ <div class="tabs-swipeable-wrap">
+      <!-- Tabs, tabs wrapper -->
+      <div class="tabs">
+        <!-- Tab 1, active by default -->
+        <div id="tab-1" class="page-content tab active">
+          <div class="content-block">
+            ... Tab 1 content ...
+              <p id="clear" >clear</p>
+              
+              <p>gggg</p>
+          </div>
+        </div>
+        <!-- Tab 2 -->
+        <div id="tab-2" class="page-content tab">
+          <div class="content-block">
+            ... Tab 2 content ...
+          </div>
+        </div>
+        <!-- Tab 3 -->
+        <div id="tab-3" class="page-content tab">
+          <div class="content-block">
+            ... Tab 3 content ...
+          </div>
+        </div>
+           <div id="tab-4" class="page-content tab">
+          <div class="content-block">
+            ... Tab 4 content ...
+          </div>
+        </div> <div id="tab-5" class="page-content tab">
+          <div class="content-block">
+            ... Tab 5 content ...
+          </div>
+        </div> <div id="tab-6" class="page-content tab">
+          <div class="content-block">
+            ... Tab 6 content ...
+          </div>
+        </div>
+           <div id="tab-7" class="page-content tab">
+          <div class="content-block">
+            ... Tab 7 content ...
+          </div>
+        </div>
+           <div id="tab-8" class="page-content tab">
+          <div class="content-block">
+            ... Tab 8 content ...
+          </div>
+        </div>
+           <div id="tab-9" class="page-content tab">
+          <div class="content-block">
+            ... Tab 9 content ...
+          </div>
+        </div>
+           <div id="tab-310" class="page-content tab">
+          <div class="content-block">
+            ... Tab 10 content ...
+            
+              
+          </div>
+        </div>
+      </div><!--end tab class-->
+    </div>
+  </div>
+                
+                
+            </div> <!--end page content-->
+              
+          </div> <!-- end index page-->
+            
+                   
+    
+            
+        </div>
+      </div>
+    </div>
+    
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!--<script type="text/javascript" src="js/index.js"></script>-->
+    <script type="text/javascript">
+      
+            
+           $(window).load(function() {
+       
+	
+               // alert("All clear");
+   if(window.localStorage.getItem("login") != 1) {
+        
+     window.location.href="pages/login.html";
+      // alert('All clear');
+   }
+                });
+        
+                 
+           $(document).ready(function() {
+               $("#clear").click(function(){
+                 window.localStorage.removeItem("login");
+                   
+                   if(window.localStorage.getItem("login") != 1) {
+                   window.location.href="pages/login.html";
+                   }
+               });
+           });
+       
+    </script>
+    
+</body>
+
+</html>
