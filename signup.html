@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+        * Create your own at http://cspisawesome.com
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/signup.css"/>
+        <link rel="stylesheet" type="text/css" href="css/semantic.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="logo">
+            <div class="logo2">
+                 <h3 style="text-align:center;">gothere</h3>
+            </div>
+        </div>
+            <div class="ui form">
+                <form method="post">
+                    <div class="form2">
+                                    <input type="text" placeholder="Full name" id="name" size="45"><br/><br/>
+                                   
+                                    <input type="text" placeholder="Username" id="username" size="45"><br/><br/>
+                                    
+                                    <input type="email" placeholder="E-mail" id="unique" size="45"><br/><br/>
+                                    
+                                    <input type="password" placeholder="Password" id="secret" size="45"><br/><br/>
+                                   
+                                    <input type="text" placeholder="Gender" id="gender" size="45"><br/><br/>
+                    
+                                     <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+                            <div class="ui button"  id="signup">Sign up</div>
+                    </div>
+                 </form>
+
+            </div>
+        <div class="signup">
+            
+                    <p style="text-align:center;">Not your first time? <a href="login.html">Sign up</a></p>
+                        
+        </div>
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script>
+        
+            $(document).ready(function(){
+                
+               $("#signup").click(function(){
+                   
+                  var name = $("#name").val();
+                  var username = $("#username").val();
+                  var email = $("#unique").val();
+                  var password = $("#secret").val();
+                  var gender = $("#gender").val();
+                   
+                  if (name != "" && username != "" && email != "" && password != "" && gender != "") {
+                      
+                      $.ajax({
+                          
+                         type: 'post',
+                          url: 'http://gothere.000webhostapp.com/signup.php',
+                         //url: 'signup.php',
+                         data: {
+                             
+                             name: name,
+                             username: username,
+                             email: email,
+                             password: password,
+                             gender: gender
+                             
+                         },
+                          success:function(response) {
+                              
+                              if (response == "success") {
+                                  
+                                 //$('#test').html(response);
+                                  alert("Sign up successful log in to continue");
+                                      
+                                  window.location.href="login.html";
+        
+                              }
+                              else {
+                                  alert("Sign up unsuccessful");
+                              }
+                              
+                          }
+                          
+                      });
+                      
+                  }
+                   else {
+                       alert("Fill all fields");
+                   }
+                   
+               });
+                
+            });
+        
+        
+        </script>
+    </body>
+</html>

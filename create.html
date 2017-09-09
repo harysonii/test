@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/create.css"/>
+        <link rel="stylesheet" type="text/css" href="css/materialize.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+        
+        <title>Hello World</title>
+
+    </head>
+    <body>
+       <!-- <header class="headerCon">
+    <div class="header">
+        <a class="active a-left" style="margin-right:;" href="#"><i class="fa fa-search"></i></a>
+        <a class="center-text">Discover</a>
+        <a class="active a-right" href="#"><i class="fa fa-map"></i></a>
+    
+    </div>
+    </header>-->
+        <div class="navbar-fixed">
+            <nav class="">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Gothere</a>
+                    <ul class="left "><a href="#"><i class="fa fa-search"></i></a></ul>
+                    <ul class="right "><a href="#"><i class="fa fa-map"></i></a></ul>
+                </div>
+            </nav>
+        </div>
+   
+    
+        <div class="" style="width:90%;margin: 15% auto;z-index: 1;">
+            <div class="">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>File</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path Validate" type="text" placeholder="Upload your events image">
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="The name of the event is:">
+                    </div>
+                    <div class="input-field">
+                        <textarea id="" type="text" class="materialize-textarea" placeholder="The event is about:"></textarea>
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="The location of the event is:">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which City, Kubwa?">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which state, Abuja?">
+                    </div>
+                    <div class="col s6">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" class="datepicker w" placeholder="Date: From">
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" class="datepicker 2" placeholder="Date: To">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" class="timepicker" placeholder="Time: From">
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" class="timepicker" placeholder="Time: To">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="number" placeholder="How much? Free (0) 0r 2000">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which state, Abuja?">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which state, Abuja?">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which state, Abuja?">
+                    </div>
+                    <div class="input-field">
+                        <input id="" type="text" placeholder="In which state, Abuja?">
+                    </div>
+                     <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                </form>
+            </div>
+        </div>
+    
+    <footer class="footer">
+        
+        <a class="active" href="index.html"><i class="fa fa-eye"></i></a>
+            <a class="active" href="schedule.html"><i class="fa fa-calendar"></i></a>
+            <a class="active" href="create.html"><i class="fa fa-plus-square"></i></a>
+            <a class="active" href="notification.html"><i class="fa fa-bell"></i></a>
+            <a class="active" href="profile.html"><i class="fa fa-user"></i></a>
+        
+    </footer>
+        
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            $('.w').click(function(){
+                $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  }); 
+            });
+                
+                 $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
+            });
+        </script>
+    </body>
+</html>
